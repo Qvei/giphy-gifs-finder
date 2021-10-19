@@ -1,1 +1,0 @@
-"# giphy-gifs-finder" 
