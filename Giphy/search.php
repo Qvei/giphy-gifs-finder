@@ -48,7 +48,7 @@ class Gifs{
 
 
 if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'){
-    if (isset($_POST['name']) && $_POST['name'] !== ''){
+    if (isset($_POST['name']) && $_POST['name'] !== '' && $_POST['key'] !== ''){
     	$offset = $_POST['offset'];
     	$rating = $_POST['rating'];
 	    $limit = $_POST['limit'];
@@ -58,7 +58,7 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTE
         $ech = new Gifs($name,$key,$rating,$limit,$offset);
         $ech->searchgif();
     }else{
-        echo '<h4>Enter image name!</h4>';
+        echo '<h4>Enter image name and REAL API key!</h4>';
     }
 }
 
